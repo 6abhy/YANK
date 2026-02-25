@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 🤍</title>
+<link rel="icon" type="image/png" href="favicon-32x32.png">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f5f5f7;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", 
+                     "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #1d1d1f;
+    }
+
+    .card {
+        background: white;
+        padding: 50px 40px;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        text-align: center;
+        width: 340px;
+        transition: 0.3s ease;
+    }
+
+    h1 {
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        margin-bottom: 25px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    button {
+        padding: 10px 22px;
+        border-radius: 20px;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        font-weight: 500;
+    }
+
+    .yes {
+        background: #ffe0ee;
+        color: rgb(0, 0, 0);
+    }
+
+    .yes:hover {
+        background: #ffe0ee;
+        transform: scale(1.05);
+    }
+
+    .no {
+        background: #e5e5ea;
+        color: #1d1d1f;
+    }
+
+    .no:hover {
+        background: #d1d1d6;
+    }
+
+    #passwordBox {
+        margin-top: 20px;
+        display: none;
+    }
+
+    input {
+        padding: 8px 15px;
+        border-radius: 18px;
+        border: 1px solid #d2d2d7;
+        outline: none;
+        text-align: center;
+        font-family: inherit;
+    }
+
+    #message {
+        margin-top: 20px;
+        font-size: 16px;
+        min-height: 20px;
+    }
+
+    .gif {
+        margin-top: 20px;
+        display: none;
+    }
+
+    .gif img {
+        width: 150px;
+        border-radius: 16px;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>aokah kmuh syank sm akuh</h1>
+
+    <div class="buttons">
+        <button class="yes" onclick="askPassword()">YAK</button>
+        <button class="no" onclick="sayNo()">g</button>
+    </div>
+
+    <div id="passwordBox">
+        <input type="password" id="passwordInput" placeholder="harusnya tau lah">
+        <br><br>
+        <button class="yes" onclick="checkPassword()">Enter</button>
+    </div>
+
+    <div id="message"></div>
+
+    <div class="gif" id="gifContainer">
+        <!-- Replace gif link below -->
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExb256NGdqYnA1dDBmZXEyMHNxMGNjbXU4cG9zbmRzeWlxZ3h2aGlqNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xCtx06kFEc8mXJPAhc/giphy.gif" alt="Cute GIF">
+    </div>
+
+</div>
+
+<script>
+function askPassword() {
+    document.getElementById("passwordBox").style.display = "block";
+    document.getElementById("message").innerText = "";
+}
+
+function checkPassword() {
+    const password = document.getElementById("passwordInput").value;
+
+    if (password === "bagas") {
+        document.getElementById("message").innerText =
+            "I LOB UUU, Sorry for what im doing last week i hope you forgive me, aku tau apa yang aku perbuat itu salah dan ga seharusnya aku begitu ;)";
+        document.getElementById("gifContainer").style.display = "block";
+    } else {
+        document.getElementById("message").innerText =
+            "tetottt..";
+    }
+}
+
+function sayNo() {
+    document.getElementById("message").innerText =
+        "gwe im fine";
+}
+</script>
+
+</body>
+</html>
